@@ -1,0 +1,101 @@
+// @group hmenu
+.hmenu {
+
+	.menu {
+		margin: 0;
+		padding: 0;
+	}
+
+	.menu > li {
+		display: inline-block;
+		*display: inline;
+		*zoom: 1;
+		position: relative;
+	}
+
+	.menu > li > a,
+	.menu > li > span {
+		display: block;
+
+		span {
+
+		}
+	}
+
+	ul ul { // submenu
+		position: absolute;
+		top: 100%;
+		left: 0;
+		margin: 0;
+		padding: 0;
+
+		li {
+			white-space: nowrap;
+		}
+	}
+}
+
+.primary {
+	font-family: 'Goudy Old Style';
+	font-size: 14px;
+	text-transform: uppercase;
+	border-top: 1px solid #cbd3d8;
+	border-bottom: 1px solid #cbd3d8;
+	text-align: center;
+	width: 100%;
+	
+	li {
+		line-height: 30px;
+		padding: 0 13px;
+	}
+	
+	a {
+		color: $menutext;
+	}
+}
+
+.secondary {
+	width: 100%;
+	background: url('../images/divider_footer.png') bottom center repeat-x;
+	
+	li {
+		min-height: 27px;
+		&:first-child a {
+			border-left: 0;
+		}
+	}
+	
+	a {
+		font-size: 12px;
+		line-height: 1em;
+		padding: 0 9px;
+		color: white;
+		border-left: 1px solid white;
+	}
+}
+
+// @group vmenu
+.vmenu {
+
+	.menu {
+		margin: 0;
+		padding: 0;
+	}
+
+	ul ul { // submenus
+		margin: 0.5em 0 1em 1em;
+		list-style: none;
+	}
+}
+
+//tabs menu
+
+.tabs {
+	list-style: none;
+	text-align: left;
+	padding: 0;
+	
+	li {
+		padding: 0;
+	}
+}

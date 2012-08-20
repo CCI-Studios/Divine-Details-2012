@@ -1,0 +1,31 @@
+.region-sidebar .block-block {
+	
+	&:first-child {
+		margin-top: 0;
+	}
+}
+
+div.masthead-block {
+	font-size: 18px;
+	overflow: visible;
+	
+	h1 {
+		font-size: 40px;
+		margin-left: 28%;
+	}
+	
+	.big-image {
+		position: absolute;
+		bottom: -5px;
+		left: 4px;
+		width: 40%;
+	}
+	
+	.planner {
+		margin-left: 40%;
+	}
+	
+	ul.divine-ul {
+		margin-left: 60%;
+	}
+}

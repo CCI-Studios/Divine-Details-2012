@@ -1,0 +1,61 @@
+/* elements */
+body, select, input, textarea {
+	color: #444; /* off black */
+	font-family: 'Goudy Old Style', Helvetica, Arial, sans-serif;
+	font-size: 14px;
+}
+
+* { 
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+
+	// FIXME: Change this to the right path
+	*behavior: url(/templates/default/resources/boxsizing.htc); // IE7 only
+}
+
+@font-face {
+    font-family: 'Goudy Old Style';
+    src: url('../resources/GOUDOS.eot');
+    src: url('../resources/GOUDOS.eot?#iefix') format('embedded-opentype'),
+         url('../resources/GOUDOS.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Headers (h1, h2, etc) have no default font-size or margin; define those yourself */
+h1, h2, h3, h4, h5, h6 {
+	margin-top: 0;
+}
+
+#content h1, h2 { 
+	font-size: 14px;
+	font-weight: normal;
+	text-transform: uppercase;
+	background: url('../images/divider_header.png') bottom center repeat-x;
+	padding-bottom: 13px;
+}
+
+h3 { font-size: 1.6em; }
+h4 { font-size: 1.4em; }
+h5 { font-size: 1.2em; }
+h6 { font-size: 1.0em; }
+
+a, a:active, a:visited {
+	color: $menutext;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+
+img {
+	width: auto;
+	max-width: 100%;
+	height: auto;
+}
+
+p {
+	margin: 1em 0 0;
+}
