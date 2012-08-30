@@ -11,6 +11,7 @@
 		*display: inline;
 		*zoom: 1;
 		position: relative;
+		padding: 0 5px;
 	}
 
 	.menu > li > a,
@@ -44,9 +45,17 @@
 	text-align: center;
 	width: 100%;
 	
-	li {
+	.menu > li {
 		line-height: 30px;
-		padding: 0 13px;
+		width: 49%;
+		
+		&.first {
+			padding-left: 0;
+		}
+		
+		&.last {
+			padding-right: 0;
+		}
 	}
 	
 	a {
@@ -58,8 +67,9 @@
 	width: 100%;
 	background: url('../images/divider_footer.png') bottom center repeat-x;
 	
-	li {
+	.menu > li {
 		min-height: 27px;
+		padding: 0;
 		&:first-child a {
 			border-left: 0;
 		}
@@ -68,7 +78,7 @@
 	a {
 		font-size: 12px;
 		line-height: 1em;
-		padding: 0 9px;
+		padding: 0 7px 0 9px;
 		color: white;
 		border-left: 1px solid white;
 	}

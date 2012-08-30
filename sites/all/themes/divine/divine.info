@@ -49,6 +49,7 @@ stylesheets[all][] = system.menus.css
 
 ; Then we add our own stylesheets.
 stylesheets[all][] = css/template.css
+stylesheets-conditional[lte IE 8][all][] = css/template-ie.css
 
 ; Built-in conditional stylesheet support has been removed from Zen 7.x-5.x.
 ; Instead, Zen now adds conditional-comment-included classes to the html

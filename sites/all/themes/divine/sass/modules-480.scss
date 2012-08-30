@@ -2,15 +2,19 @@ div.masthead-block {
 	
 	h1 {
 		font-size: 36px;
+		margin-left: 0;
 	}
 	
 	.planner {
 		float: left;
 		margin: 0 3.723404255% 0 4.787234043% ; //35px 282px
-		
 	}
 	
-	ul.divine-ul {
+	ul.masthead-ul {
 		margin-left: 34.787234043%;
+		
+		li:first-child {
+			text-align: left;
+		}
 	}
 }

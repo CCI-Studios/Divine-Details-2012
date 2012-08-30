@@ -1,8 +1,12 @@
 /* elements */
 body, select, input, textarea {
 	color: #444; /* off black */
-	font-family: 'Goudy Old Style', Helvetica, Arial, sans-serif;
+	font-family: Helvetica, Arial, sans-serif;
 	font-size: 14px;
+}
+
+body {
+	font-family: 'Goudy Old Style', Helvetica, Arial, sans-serif;
 }
 
 * { 
@@ -11,8 +15,9 @@ body, select, input, textarea {
 	-ms-box-sizing: border-box;
 	box-sizing: border-box;
 
-	// FIXME: Change this to the right path
-	*behavior: url(/templates/default/resources/boxsizing.htc); // IE7 only
+	*behavior: url(sites/all/themes/divine/resources/boxsizing.htc); // IE7 only
+	
+	
 }
 
 @font-face {
@@ -25,22 +30,27 @@ body, select, input, textarea {
 }
 
 /* Headers (h1, h2, etc) have no default font-size or margin; define those yourself */
-h1, h2, h3, h4, h5, h6 {
+h1 {
+	font-size: 18px;
 	margin-top: 0;
 }
 
-#content h1, h2 { 
-	font-size: 14px;
-	font-weight: normal;
-	text-transform: uppercase;
-	background: url('../images/divider_header.png') bottom center repeat-x;
-	padding-bottom: 13px;
-}
-
-h3 { font-size: 1.6em; }
+h2 { font-size: 16px; }
+h3 { font-size: 14px; }
 h4 { font-size: 1.4em; }
 h5 { font-size: 1.2em; }
 h6 { font-size: 1.0em; }
+
+h1, h2, h3 {
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+//drupal adds title class to headers
+.title {
+	background: url('../images/divider_header.png') bottom center repeat-x;
+	padding-bottom: 13px;
+}
 
 a, a:active, a:visited {
 	color: $menutext;
@@ -58,4 +68,14 @@ img {
 
 p {
 	margin: 1em 0 0;
+	
+	&:first-child {
+		margin-top: 0;
+	}
+}
+
+hr {
+	border: 0;
+	background: url('../images/divider_header.png') repeat-x;
+	height: 2px;
 }

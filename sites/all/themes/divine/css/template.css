@@ -368,15 +368,18 @@ table {
 body, select, input, textarea {
   color: #444;
   /* off black */
-  font-family: 'Goudy Old Style', Helvetica, Arial, sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
   font-size: 14px; }
+
+body {
+  font-family: 'Goudy Old Style', Helvetica, Arial, sans-serif; }
 
 * {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -ms-box-sizing: border-box;
   box-sizing: border-box;
-  *behavior: url(/templates/default/resources/boxsizing.htc); }
+  *behavior: url(sites/all/themes/divine/resources/boxsizing.htc); }
 
 @font-face {
   font-family: 'Goudy Old Style';
@@ -386,18 +389,15 @@ body, select, input, textarea {
   font-style: normal; }
 
 /* Headers (h1, h2, etc) have no default font-size or margin; define those yourself */
-h1, h2, h3, h4, h5, h6 {
+h1 {
+  font-size: 18px;
   margin-top: 0; }
 
-#content h1, h2 {
-  font-size: 14px;
-  font-weight: normal;
-  text-transform: uppercase;
-  background: url("../images/divider_header.png") bottom center repeat-x;
-  padding-bottom: 13px; }
+h2 {
+  font-size: 16px; }
 
 h3 {
-  font-size: 1.6em; }
+  font-size: 14px; }
 
 h4 {
   font-size: 1.4em; }
@@ -407,6 +407,14 @@ h5 {
 
 h6 {
   font-size: 1.0em; }
+
+h1, h2, h3 {
+  font-weight: bold;
+  text-transform: uppercase; }
+
+.title {
+  background: url("../images/divider_header.png") bottom center repeat-x;
+  padding-bottom: 13px; }
 
 a, a:active, a:visited {
   color: #354954;
@@ -422,6 +430,13 @@ img {
 
 p {
   margin: 1em 0 0; }
+  p:first-child {
+    margin-top: 0; }
+
+hr {
+  border: 0;
+  background: url("../images/divider_header.png") repeat-x;
+  height: 2px; }
 
 /* forms */
 /* Align checkboxes, radios, text inputs with their label by: Thierry Koblentz tjkdesign.com/ez-css/css/base.css  */
@@ -461,6 +476,17 @@ input:invalid, textarea:invalid {
 button {
   width: auto;
   overflow: visible; }
+
+.webform-client-form .form-text {
+  min-width: 250px;
+  width: 100%;
+  max-width: 350px; }
+.webform-client-form .webform-component-markup {
+  font-size: 16px;
+  font-weight: bold; }
+
+div.form-item input.form-checkbox {
+  vertical-align: middle; }
 
 /*
 Grids should be setup using the following structure:
@@ -629,8 +655,8 @@ body {
 
 .container {
   margin: 0 auto;
-  padding: 0 10px;
-  width: 90%; }
+  padding: 0 5%;
+  width: 100%; }
 
 #masthead {
   width: 100%; }
@@ -641,13 +667,18 @@ body {
 #content {
   float: left;
   width: 100%;
-  padding: 20px 15px;
+  padding: 20px 2.419354839%;
   border: 1px solid #bfcacf;
-  background-color: #dbe5ea;
+  background: #dbe5ea url("../images/bg_content.jpg") bottom left no-repeat;
   border-radius: 5px;
   -moz-box-shadow: 0px 15px 7px -12px #42525b;
   -webkit-box-shadow: 0px 15px 7px -12px #42525b;
   box-shadow: 0px 15px 7px -12px #42525b; }
+
+#bottom {
+  background: url("../images/divider_header.png") top center repeat-x;
+  padding-top: 20px;
+  margin-top: 15px; }
 
 #sidebar {
   float: left;
@@ -657,12 +688,13 @@ body {
   font-size: 11px;
   color: #e5eef2;
   text-align: center;
-  padding: 20px 0;
-  background: url("../images/bg_footerRepeat.png") top center repeat-x; }
+  padding: 20px 0 0;
+  background: url("../images/bg_footerRepeat.png") top center repeat-x;
+  min-height: 155px; }
 
 #copyright {
-  padding: 15px 0;
-  line-height: 2em; }
+  margin: 0 0 15px;
+  line-height: 1.5em; }
   #copyright a {
     color: #e5eef2; }
 
@@ -681,24 +713,34 @@ div.masthead-block {
   border: 1px solid #d4dce0;
   border-bottom: none;
   border-radius: 5px;
+  *zoom: 1;
   -moz-box-shadow: 0px 15px 7px -12px #42525b;
   -webkit-box-shadow: 0px 15px 7px -12px #42525b;
   box-shadow: 0px 15px 7px -12px #42525b; }
+  .lt-ie9 div.masthead-block {
+    border-bottom: 1px solid #d4dce0; }
   div.masthead-block h1 {
     font-size: 22px;
     font-weight: normal;
+    text-transform: none;
     color: white;
     line-height: .8em;
-    text-shadow: -2px 1px 0px rgba(53, 73, 84, 0.31); }
-  div.masthead-block ul.divine-ul {
+    text-shadow: -2px 1px 0px rgba(53, 73, 84, 0.31);
+    margin-left: 5%; }
+  div.masthead-block ul.masthead-ul {
     margin: 0; }
-    div.masthead-block ul.divine-ul li:first-child {
+    div.masthead-block ul.masthead-ul li:first-child {
       list-style: none;
       margin: 0 0 15px -40px;
       padding-bottom: 15px;
-      background: url("../images/divider_header.png") bottom center repeat-x; }
-    div.masthead-block ul.divine-ul li {
+      background: url("../images/divider_header.png") bottom center repeat-x;
+      text-align: center; }
+    div.masthead-block ul.masthead-ul li {
       line-height: 24px; }
+
+.region-bottom .block-block {
+  clear: both;
+  overflow: auto; }
 
 .region-sidebar .block-block {
   padding: 10px;
@@ -709,25 +751,41 @@ div.masthead-block {
   -moz-box-shadow: 0px 15px 7px -12px #42525b;
   -webkit-box-shadow: 0px 15px 7px -12px #42525b;
   box-shadow: 0px 15px 7px -12px #42525b; }
+  .region-sidebar .block-block h1, .region-sidebar .block-block h2, .region-sidebar .block-block h3 {
+    margin-top: 0; }
 
-.field-content {
-  margin: 1em 0; }
+.region-sidebar .image-block {
+  padding: 0;
+  overflow: hidden;
+  border-bottom: 0; }
+  .region-sidebar .image-block img {
+    border-radius: 5px;
+    display: block; }
 
-.view-testimonials .views-field-nothing {
-  text-align: right;
-  margin: 0 0 1em; }
-.view-testimonials .field-content {
+.view .views-row {
   margin: 1em 0 0; }
-.view-testimonials .pager {
-  margin: 1em 0;
+  .view .views-row.views-row-first {
+    margin: 0; }
+.view .field-content {
+  margin: 0; }
+.view .pager {
+  margin: 1em 0 0;
   padding-top: 1em;
   background: url("../images/divider_header.png") top center repeat-x;
-  text-transform: uppercase; }
-.view-testimonials .view-footer p {
+  text-transform: uppercase;
+  *zoom: 1; }
+  .view .pager li {
+    padding: 0 15px;
+    margin: 0; }
+.view .view-footer p {
   padding-top: 1em;
   margin-bottom: 0;
   background: url("../images/divider_header.png") top center repeat-x;
   text-align: center; }
+
+.view .views-field-nothing,
+.block-views .views-field-nothing {
+  text-align: right; }
 
 .hmenu .menu {
   margin: 0;
@@ -736,7 +794,8 @@ div.masthead-block {
   display: inline-block;
   *display: inline;
   *zoom: 1;
-  position: relative; }
+  position: relative;
+  padding: 0 5px; }
 .hmenu .menu > li > a,
 .hmenu .menu > li > span {
   display: block; }
@@ -757,23 +816,28 @@ div.masthead-block {
   border-bottom: 1px solid #cbd3d8;
   text-align: center;
   width: 100%; }
-  .primary li {
+  .primary .menu > li {
     line-height: 30px;
-    padding: 0 13px; }
+    width: 49%; }
+    .primary .menu > li.first {
+      padding-left: 0; }
+    .primary .menu > li.last {
+      padding-right: 0; }
   .primary a {
     color: #354954; }
 
 .secondary {
   width: 100%;
   background: url("../images/divider_footer.png") bottom center repeat-x; }
-  .secondary li {
-    min-height: 27px; }
-    .secondary li:first-child a {
+  .secondary .menu > li {
+    min-height: 27px;
+    padding: 0; }
+    .secondary .menu > li:first-child a {
       border-left: 0; }
   .secondary a {
     font-size: 12px;
     line-height: 1em;
-    padding: 0 9px;
+    padding: 0 7px 0 9px;
     color: white;
     border-left: 1px solid white; }
 
@@ -808,14 +872,26 @@ div.masthead-block {
    Also: hot pink! */
 /* TODO Update selection BG color */
 ::-moz-selection {
-  background: #FF5E99;
+  background: #2c3d46;
   color: #fff;
   text-shadow: none; }
 
 ::selection {
-  background: #FF5E99;
+  background: #2c3d46;
   color: #fff;
   text-shadow: none; }
+
+.bordered-rounded {
+  border-radius: 10px;
+  border: 1px solid #bfcacf; }
+
+.planner-ul {
+  margin: 0 0 0 45%;
+  padding: 0;
+  list-style-position: inside; }
+
+.planner-p {
+  margin: 0 0 0 45%; }
 
 .phone-visible, .mobile-visible,
 .tablet-hidden, .desktop-hidden {
@@ -825,14 +901,21 @@ div.masthead-block {
 .phone-hidden, .mobile-hidden {
   display: none; }
 
-@media only screen and (min-width:480px) {
+@media only screen and (min-width: 480px) {
   div.masthead-block h1 {
-    font-size: 36px; }
+    font-size: 36px;
+    margin-left: 0; }
   div.masthead-block .planner {
     float: left;
     margin: 0 3.723404255% 0 4.787234043%; }
-  div.masthead-block ul.divine-ul {
+  div.masthead-block ul.masthead-ul {
     margin-left: 34.787234043%; }
+    div.masthead-block ul.masthead-ul li:first-child {
+      text-align: left; }
+
+  .primary .menu > li {
+    width: auto;
+    padding: 0 11px; }
 
   .tablet-visible, .mobile-visible,
   .phone-hidden, .desktop-hidden {
@@ -841,7 +924,7 @@ div.masthead-block {
   .phone-visible, .desktop-visible,
   .tablet-hidden, .mobile-hidden {
     display: none; } }
-@media only screen and (min-width:760px) {
+@media only screen and (min-width: 760px) {
   .region-sidebar .block-block:first-child {
     margin-top: 0; }
 
@@ -853,12 +936,14 @@ div.masthead-block {
       margin-left: 28%; }
     div.masthead-block .big-image {
       position: absolute;
-      bottom: -5px;
+      bottom: 0;
       left: 4px;
       width: 40%; }
+      div.masthead-block .big-image img {
+        display: block; }
     div.masthead-block .planner {
       margin-left: 40%; }
-    div.masthead-block ul.divine-ul {
+    div.masthead-block ul.masthead-ul {
       margin-left: 60%; }
 
   #content {
@@ -870,6 +955,9 @@ div.masthead-block {
     width: 31.914893617%;
     margin-left: 2.127659574%; }
 
+  #copyright {
+    margin-top: 15px; }
+
   .tablet-visible, .mobile-visible,
   .desktop-visible, .phone-hidden {
     display: block; }
@@ -877,7 +965,7 @@ div.masthead-block {
   .phone-visible, .tablet-hidden
   .mobile-hidden, .desktop-hidden {
     display: none; } }
-@media only screen and (min-width:960px) {
+@media only screen and (min-width: 960px) {
   div.masthead-block h1 {
     font-size: 48px;
     margin-left: 30.212765957%; }
@@ -885,8 +973,15 @@ div.masthead-block {
   #wrapper {
     min-width: 960px; }
 
+  #content {
+    width: 620px; }
+
+  #sidebar {
+    width: 300px; }
+
   .container {
-    width: 940px; }
+    width: 960px;
+    padding: 0 10px; }
 
   .desktop-visible, .phone-hidden,
   .tablet-hidden, .mobile-hidden {

@@ -26,3 +26,24 @@ input:invalid, textarea:invalid {
 /* Make buttons play nice in IE:
    www.viget.com/inspire/styling-the-button-element-in-internet-explorer/ */
 button {  width: auto; overflow: visible; }
+
+.webform-client-form {
+	
+	.form-text {
+		min-width: 250px;
+		width: 100%;
+		max-width: 350px;
+	}
+	
+	.webform-component-markup {
+		font-size: 16px;
+		font-weight: bold;
+	}
+}
+
+div.form-item {
+	
+	input.form-checkbox {
+		vertical-align: middle;
+	}
+}

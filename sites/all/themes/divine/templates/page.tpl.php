@@ -115,9 +115,11 @@
       <?php endif; ?>
       <?php print render($page['content']); ?>
       <?php print $feed_icons; ?>
+			<?php if ($page['bottom']): ?>
 			<div id="bottom">
 				<?php print render($page['bottom']); ?>
 			</div>
+			<?php endif; ?>
     </div><!-- /#content -->
 		
 		<div id="sidebar">
@@ -174,7 +176,5 @@
 		Site by <a href="http://ccistudios.com">CCI Studios</a>
 	</div>
 </div></div>
-
 </div><!-- /#wrapper -->
-
 <?php print render($page['page_bottom']); ?>

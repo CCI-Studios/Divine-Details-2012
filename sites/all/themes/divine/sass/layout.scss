@@ -13,8 +13,8 @@ body {
 
 .container {
 	margin: 0 auto;
-	padding: 0 10px;
-	width: 90%;
+	padding: 0 5%;
+	width: 100%;
 }
 
 #masthead {
@@ -28,12 +28,18 @@ body {
 #content {
 	float: left;
 	width: 100%;
-	padding: 20px 15px;
+	padding: 20px 2.419354839%;
 	border: 1px solid $bordercolor;
-	background-color: $blue;
+	background: $blue url('../images/bg_content.jpg') bottom left no-repeat;
 	border-radius: 5px;
 	
 	@include box-shadow;
+}
+
+#bottom {
+	background: url('../images/divider_header.png') top center repeat-x;
+	padding-top: 20px;
+	margin-top: 15px;
 }
 
 #sidebar {
@@ -45,13 +51,14 @@ body {
 	font-size: 11px;
 	color: $light-blue;
 	text-align: center;
-	padding: 20px 0;
+	padding: 20px 0 0;
 	background: url('../images/bg_footerRepeat.png') top center repeat-x;
+	min-height: 155px; //for gradient background to blend in with body background
 }
 
 #copyright {
-	padding: 15px 0;
-	line-height: 2em;
+	margin: 0 0 15px;
+	line-height: 1.5em;
 	
 	a {
 		color: $light-blue;
