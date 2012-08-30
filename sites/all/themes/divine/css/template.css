@@ -437,6 +437,8 @@ hr {
   border: 0;
   background: url("../images/divider_header.png") repeat-x;
   height: 2px; }
+  .lt-ie8 hr {
+    margin-top: 10px; }
 
 /* forms */
 /* Align checkboxes, radios, text inputs with their label by: Thierry Koblentz tjkdesign.com/ez-css/css/base.css  */
@@ -689,7 +691,7 @@ body {
   color: #e5eef2;
   text-align: center;
   padding: 20px 0 0;
-  background: url("../images/bg_footerRepeat.png") top center repeat-x;
+  background: #2c3d46 url("../images/bg_footerRepeat.png") top center repeat-x;
   min-height: 155px; }
 
 #copyright {
@@ -700,9 +702,17 @@ body {
 
 .logo {
   text-align: center;
-  padding: 30px 0 40px; }
+  padding: 30px 0 20px; }
 
-div.masthead-block {
+.social-media {
+  text-align: center;
+  margin-bottom: 3px; }
+  .social-media a .social-icon {
+    margin-left: 10px; }
+  .social-media a:first-child .social-icon {
+    margin-left: 0; }
+
+.masthead-block {
   font-size: 16px;
   color: #354954;
   margin-top: 40px;
@@ -717,9 +727,9 @@ div.masthead-block {
   -moz-box-shadow: 0px 15px 7px -12px #42525b;
   -webkit-box-shadow: 0px 15px 7px -12px #42525b;
   box-shadow: 0px 15px 7px -12px #42525b; }
-  .lt-ie9 div.masthead-block {
+  .lt-ie9 .masthead-block {
     border-bottom: 1px solid #d4dce0; }
-  div.masthead-block h1 {
+  .masthead-block h1 {
     font-size: 22px;
     font-weight: normal;
     text-transform: none;
@@ -727,15 +737,15 @@ div.masthead-block {
     line-height: .8em;
     text-shadow: -2px 1px 0px rgba(53, 73, 84, 0.31);
     margin-left: 5%; }
-  div.masthead-block ul.masthead-ul {
+  .masthead-block ul.masthead-ul {
     margin: 0; }
-    div.masthead-block ul.masthead-ul li:first-child {
+    .masthead-block ul.masthead-ul li:first-child {
       list-style: none;
       margin: 0 0 15px -40px;
       padding-bottom: 15px;
       background: url("../images/divider_header.png") bottom center repeat-x;
       text-align: center; }
-    div.masthead-block ul.masthead-ul li {
+    .masthead-block ul.masthead-ul li {
       line-height: 24px; }
 
 .region-bottom .block-block {
@@ -881,6 +891,9 @@ div.masthead-block {
   color: #fff;
   text-shadow: none; }
 
+.bordered {
+  border: 1px solid #bfcacf; }
+
 .bordered-rounded {
   border-radius: 10px;
   border: 1px solid #bfcacf; }
@@ -925,6 +938,12 @@ div.masthead-block {
   .tablet-hidden, .mobile-hidden {
     display: none; } }
 @media only screen and (min-width: 760px) {
+  .logo {
+    padding-bottom: 0; }
+
+  .social-media {
+    text-align: right; }
+
   .region-sidebar .block-block:first-child {
     margin-top: 0; }
 
