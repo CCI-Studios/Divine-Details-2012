@@ -7,7 +7,22 @@
 	padding: 30px 0 20px;
 }
 
-div.masthead-block {
+.social-media {
+	text-align: center;
+	margin-bottom: 3px;
+	
+	a {
+		
+		.social-icon {
+			margin-left: 10px;
+		}
+		
+		&:first-child .social-icon {
+			margin-left: 0;
+		}
+	}
+}
+
 .masthead-block {
 	font-size: 16px;
 	color: $menutext;
