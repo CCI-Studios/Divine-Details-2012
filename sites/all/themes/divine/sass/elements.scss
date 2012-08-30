@@ -78,4 +78,8 @@ hr {
 	border: 0;
 	background: url('../images/divider_header.png') repeat-x;
 	height: 2px;
+	
+	.lt-ie8 & {
+		margin-top: 10px;
+	}
 }
