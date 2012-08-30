@@ -4,6 +4,10 @@
 
 #content {
 	width: 620px;
+	
+	.lt-ie8 .node-type-webform & {
+		width: 600px;
+	}
 }
 
 #sidebar {
