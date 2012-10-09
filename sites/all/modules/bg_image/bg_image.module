@@ -165,6 +165,20 @@ function bg_image_settings_form($form, &$form_state) {
     '#description' => t('The size of the background (NOTE: CSS3 only. Useful for responsive designs) [<a href="http://www.w3schools.com/cssref/css3_pr_background-size.asp">css property: background-size</a>]'),
     '#default_value' => variable_get('bg_image_background_size', ''),
   );
+  // background-size:cover suppor for IE8
+  $form['css_settings']['bg_image_background_size_ie8'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Add background-size:cover support for ie8'),
+    '#description' => t('The background-size css property is only supported on browsers that support CSS3. However, there is a workaround for IE using Internet Explorer\'s built-in filters (http://msdn.microsoft.com/en-us/library/ms532969%28v=vs.85%29.aspx). Check this box to add the filters to the css. Sometimes it works well, sometimes it doesn\'t. Use at your own risk'),
+    '#default_value' => variable_get('bg_image_background_size_ie8', 0),
+  );
+  // The media query specifics
+  $form['css_settings']['bg_image_media_query'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Media Query'),
+    '#description' => t('Apply this background image css using a media query. CSS3 Only. Useful for responsive designs. example: only screen and (min-width:481px) and (max-width:768px) [<a href="http://www.w3.org/TR/css3-mediaqueries/">Read about media queries</a>]'),
+    '#default_value' => variable_get('bg_image_media_query', 'all'),
+  );
   $form['css_settings']['bg_image_important'] = array(
     '#type' => 'checkbox',
     '#title' => t('Add "!important" to the background property.'),
@@ -252,6 +266,8 @@ function bg_image_add_background_image($image_path, $css_settings = array()) {
     $important = '';
   }
 
+  $bg_size = '';
+  $ie_bg_size = '';
   if ($background_size) {
     // CSS3
     $bg_size = 'background-size:' . $background_size . $important . ';';
@@ -259,9 +275,11 @@ function bg_image_add_background_image($image_path, $css_settings = array()) {
     $bg_size .= '-webkit-background-size:' . $background_size . $important . ';';
     $bg_size .= '-moz-background-size:' . $background_size . $important . ';';
     $bg_size .= '-o-background-size:' . $background_size . $important . ';';
-  }
-  else {
-    $bg_size = '';
+    // IE filters to apply the cover effect
+    if ($background_size == 'cover' && variable_get('bg_image_background_size_ie8', 0))  {
+      $ie_bg_size = 'filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=\'.' . $image_path . '\', sizingMethod=\'scale\');
+      -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src=\'' .$image_path . '\', sizingMethod=\'scale\')";';
+    }
   }
 
   // See if admin pages are excluded from bg images
@@ -269,8 +287,8 @@ function bg_image_add_background_image($image_path, $css_settings = array()) {
 
   // Add the css if we have everything we need.
   if ($selector && $image_path && $admin) {
-    $style = $selector.'{background: ' . $bg_color . ' url('.$image_path.') ' . $repeat . ' '.$attachment.' '.$bg_x.' '.$bg_y.$important.';' . $bg_size . '}';
-    drupal_add_css($style, array('type' => 'inline', 'media' => 'all', 'group' => CSS_THEME));
+    $style = $selector.'{background: ' . $bg_color . ' url('.$image_path.') ' . $repeat . ' '.$attachment.' '.$bg_x.' '.$bg_y.$important.';' . $bg_size . $ie_bg_size .'}';
+    drupal_add_css($style, array('type' => 'inline', 'media' => variable_get('bg_image_media_query', 'all'), 'group' => CSS_THEME));
     return TRUE;
   }
   else {

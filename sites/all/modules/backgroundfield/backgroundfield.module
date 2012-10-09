@@ -279,7 +279,8 @@ function backgroundfield_field_formatter_view($entity_type, $entity, $field, $in
     $file = file_create_url($file->uri);
   }
   
-  drupal_alter('backgroundfield', &$instance['settings'], $entity);
+  // $instance['settings'] can be modified by calling hook_backgroundfield_alter(&$settings, $entity)
+  drupal_alter('backgroundfield', $instance['settings'], $entity);
 
   $css = $instance['settings']['css_selector'] . ' {
     background-image: url("' . $file . '")' . $important . ';

@@ -105,6 +105,20 @@ class bg_image_context_reaction_bg_image extends context_reaction {
         '#description' => t('The size of the background (NOTE: CSS3 only. Useful for responsive designs) [<a href="http://www.w3schools.com/cssref/css3_pr_background-size.asp">css property: background-size</a>]'),
         '#default_value' => isset($values['css_settings']['bg_image_background_size']) ? $values['css_settings']['bg_image_background_size'] : variable_get('bg_image_background_size', ''),
       );
+      // background-size:cover suppor for IE8
+      $form['css_settings']['bg_image_background_size_ie8'] = array(
+        '#type' => 'checkbox',
+        '#title' => t('Add background-size:cover support for ie8'),
+        '#description' => t('The background-size css property is only supported on browsers that support CSS3. However, there is a workaround for IE using Internet Explorer\'s built-in filters (http://msdn.microsoft.com/en-us/library/ms532969%28v=vs.85%29.aspx). Check this box to add the filters to the css. Sometimes it works well, sometimes it doesn\'t. Use at your own risk'),
+        '#default_value' => isset($values['css_settings']['bg_image_background_size_ie8']) ? $values['css_settings']['bg_image_background_size_ie8'] : variable_get('bg_image_background_size_ie8', 0),
+      );
+      // The media query specifics
+      $form['css_settings']['bg_image_media_query'] = array(
+        '#type' => 'textfield',
+        '#title' => t('Media Query'),
+        '#description' => t('Apply this background image css using a media query. Useful for responsive designs. example: only screen and (min-width:481px) and (max-width:768px) [<a href="http://www.w3.org/TR/css3-mediaqueries/">Read about media queries</a>]'),
+        '#default_value' => isset($values['css_settings']['bg_image_media_query']) ? $values['css_settings']['bg_image_media_query'] : variable_get('bg_image_media_query', 'all'),
+      );
       $form['css_settings']['bg_image_important'] = array(
         '#type' => 'checkbox',
         '#title' => t('Add "!important" to the background property.'),
