@@ -366,7 +366,7 @@ table {
 
 /* elements */
 body, select, input, textarea {
-  color: #444;
+  color: #000;
   /* off black */
   font-family: Helvetica, Arial, sans-serif;
   font-size: 14px; }
@@ -390,14 +390,14 @@ body {
 
 /* Headers (h1, h2, etc) have no default font-size or margin; define those yourself */
 h1 {
-  font-size: 18px;
+  font-size: 20px;
   margin-top: 0; }
 
 h2 {
-  font-size: 16px; }
+  font-size: 18px; }
 
 h3 {
-  font-size: 14px; }
+  font-size: 16px; }
 
 h4 {
   font-size: 1.4em; }
@@ -417,7 +417,7 @@ h1, h2, h3 {
   padding-bottom: 13px; }
 
 a, a:active, a:visited {
-  color: #354954;
+  color: #496473;
   text-decoration: none; }
 
 a:hover {
