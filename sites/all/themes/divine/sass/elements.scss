@@ -53,7 +53,7 @@ h1, h2, h3 {
 }
 
 a, a:active, a:visited {
-	color: $menutext;
+	color: lighten($medium-blue, 10%);
 	text-decoration: none;
 }
 a:hover {
