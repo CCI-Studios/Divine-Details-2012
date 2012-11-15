@@ -366,7 +366,7 @@ table {
 
 /* elements */
 body, select, input, textarea {
-  color: #000;
+  color: #333;
   /* off black */
   font-family: Helvetica, Arial, sans-serif;
   font-size: 14px; }
@@ -396,6 +396,12 @@ h1 {
 h2 {
   font-size: 18px; }
 
+h2, h3 {
+  padding: 1em 0 .67em;
+  margin: 0; }
+  h2 + *, h3 + * {
+    margin-top: 0; }
+
 h3 {
   font-size: 16px; }
 
@@ -420,6 +426,7 @@ a, a:active, a:visited {
   color: #496473;
   text-decoration: none; }
 
+#content a,
 a:hover {
   text-decoration: underline; }
 
@@ -489,6 +496,55 @@ button {
 
 div.form-item input.form-checkbox {
   vertical-align: middle; }
+
+select,
+input[type="submit"] {
+  cursor: pointer;
+  color: #333333;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+  background-color: #f5f5f5;
+  background-image: -moz-linear-gradient(top, white, #e6e6e6);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(white), to(#e6e6e6));
+  background-image: -webkit-linear-gradient(top, white, #e6e6e6);
+  background-image: -o-linear-gradient(top, white, #e6e6e6);
+  background-image: linear-gradient(to bottom, white, #e6e6e6);
+  background-repeat: repeat-x;
+  border-color: #e6e6e6 #e6e6e6 #bfbfbf;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  *background-color: #e6e6e6;
+  /* Darken IE7 buttons by default so they stand out more given they won't have borders */
+  border: 1px solid #bbbbbb;
+  *border: 0;
+  border-bottom-color: #a2a2a2;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  *margin-left: .3em;
+  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05); }
+
+input[type="submit"] {
+  padding: 4px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  height: 30px;
+  line-height: 20px;
+  *line-height: 20px;
+  text-align: center;
+  vertical-align: middle; }
+  input[type="submit"]:hover {
+    -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1); }
+  input[type="submit"]:active {
+    background-color: #e6e6e6;
+    background-color: #d9d9d9 \9;
+    background-image: none;
+    outline: 0;
+    -webkit-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05); }
 
 /*
 Grids should be setup using the following structure:
@@ -763,8 +819,9 @@ body {
   -moz-box-shadow: 0px 15px 7px -12px #42525b;
   -webkit-box-shadow: 0px 15px 7px -12px #42525b;
   box-shadow: 0px 15px 7px -12px #42525b; }
-  .region-sidebar .block-block h1, .region-sidebar .block-block h2, .region-sidebar .block-block h3 {
-    margin-top: 0; }
+  .region-sidebar .block-block h1, .region-sidebar .block-block h2, .region-sidebar .block-block h3, .region-sidebar .block-block div.contextual-links-wrapper + * {
+    margin-top: 0;
+    padding-top: 0; }
 
 .region-sidebar .image-block {
   padding: 0;
@@ -876,6 +933,30 @@ body {
     .tabs li a {
       color: white; }
 
+.editor-menu {
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  background-color: #2c3d46;
+  width: 100%; }
+  .editor-menu ul {
+    margin: .2em 0;
+    padding: 0 20px; }
+  .editor-menu li {
+    list-style: none;
+    padding: .1em 10px;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1; }
+    .editor-menu li:hover {
+      background-color: #405865;
+      border-radius: 5px; }
+  .editor-menu a {
+    color: #fff; }
+    .editor-menu a:hover {
+      text-decoration: none; }
+
 .clr, .clear {
   clear: both; }
 
@@ -916,6 +997,48 @@ body {
 
 .planner-p {
   margin: 0 0 0 45%; }
+
+.view-content {
+  font-size: 14px;
+  font-family: 'Goudy Old Style', Helvetica, Arial, sans-serif; }
+  .view-content .views-accordion-header {
+    background: #2c3d46;
+    border: none; }
+    .view-content .views-accordion-header .field-content a {
+      color: #fff; }
+  .view-content .ui-state-default .ui-icon,
+  .view-content .ui-state-active .ui-icon {
+    background-image: url("../images/accordion-icons.png"); }
+  .view-content .ui-state-hover {
+    background: #364b56;
+    border: none; }
+  .view-content .views-label {
+    font-weight: bold; }
+  .view-content .views-label,
+  .view-content .field-content {
+    display: inline-block;
+    *display: inline-block;
+    *zoom: 1; }
+  .view-content .field-content {
+    color: #354954; }
+    .view-content .field-content a {
+      color: #354954; }
+
+.views-widget-filter-field_city_tid label {
+  margin-bottom: 1em; }
+
+.views-exposed-form .views-exposed-widget {
+  float: none; }
+  .views-exposed-form .views-exposed-widget input.form-submit {
+    margin-top: 0; }
+
+.views-accordion-find_a_copy-page-header,
+.view-bridal-shows h2 {
+  background: url("../images/divider_header.png") top center repeat-x;
+  margin-top: 1em; }
+  .views-accordion-find_a_copy-page-header:first-child,
+  .view-bridal-shows h2:first-child {
+    background: none; }
 
 .phone-visible, .mobile-visible,
 .tablet-hidden, .desktop-hidden {
