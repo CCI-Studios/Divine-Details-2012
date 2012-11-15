@@ -1,0 +1,70 @@
+.view-content {
+	font-size: 14px;
+	font-family: 'Goudy Old Style', Helvetica, Arial, sans-serif;
+
+	.views-accordion-header {
+		background: $dark-blue;
+		border: none;
+
+		.field-content a {
+			color: #fff;
+		}
+	}
+
+	.ui-state-default,
+	.ui-state-active {
+		.ui-icon {
+			background-image: url('../images/accordion-icons.png');
+		}
+	}
+
+	.ui-state-hover {
+		background: lighten($dark-blue, 5%);
+		border: none;
+	}
+
+	.views-label {
+		font-weight: bold;
+	}
+
+	.views-label,
+	.field-content {
+		display: inline-block;
+		*display: inline-block;
+		*zoom: 1;
+	}
+
+	.field-content {
+		color: $medium-blue;
+
+		a {
+			color: $medium-blue;
+		}
+	}
+}
+
+//find a copy select city label
+.views-widget-filter-field_city_tid label {
+	margin-bottom: 1em;
+}
+
+//find a copy submit button
+.views-exposed-form .views-exposed-widget {
+	float: none;
+
+	input.form-submit {
+		margin-top: 0;
+	}
+}
+
+//find a copy + bridal shows header style
+
+.views-accordion-find_a_copy-page-header,
+.view-bridal-shows h2 {
+	background: url('../images/divider_header.png') top center repeat-x;
+	margin-top: 1em;
+
+	&:first-child {
+		background: none;
+	}
+}
