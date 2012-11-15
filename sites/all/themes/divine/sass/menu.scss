@@ -120,3 +120,39 @@
 		}
 	}
 }
+
+//editor menu
+.editor-menu {
+	position: fixed;
+	z-index: 2;
+	top: 0;
+	left: 0;
+	background-color: $dark-blue;
+	width: 100%;
+
+	ul {
+		margin: .2em 0;
+		padding: 0 20px;
+	}
+
+	li {
+		list-style: none;
+		padding: .1em 10px;
+		display: inline-block;
+		*display: inline;
+		*zoom: 1;
+
+		&:hover {
+			background-color: lighten($dark-blue, 10%);
+			border-radius: 5px;
+		}
+	}
+
+	a {
+		color: #fff;
+
+		&:hover {
+			text-decoration: none;
+		}
+	}
+}
