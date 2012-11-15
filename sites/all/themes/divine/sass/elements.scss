@@ -67,6 +67,8 @@ a, a:active, a:visited {
 	color: lighten($medium-blue, 10%);
 	text-decoration: none;
 }
+
+#content a,
 a:hover {
 	text-decoration: underline;
 }
@@ -74,7 +76,7 @@ a:hover {
 img {
 	width: auto;
 	max-width: 100%;
-	height: auto;
+	//height: auto;
 }
 
 p {
