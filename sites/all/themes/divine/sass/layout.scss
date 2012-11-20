@@ -64,3 +64,73 @@ body {
 		color: $light-blue;
 	}
 }
+
+//pagination
+
+
+.item-list {
+	ul.pager {
+	text-align: center;
+	color: #ffffff;
+
+		li {
+			display: inline-block;
+			*display: inline;
+			*zoom: 1;
+			width: 28px;
+			height: 32px;
+			line-height: 32px;
+			border-radius: 2px;
+			padding: 0;
+			margin-bottom: 5px;
+			border-style: solid;
+			border-width: 1px;
+			cursor: pointer;
+			background-color: $dark-blue;
+			border-color: darken($dark-blue, 10%);
+			position: relative;
+
+			.ajax-progress {
+				position: absolute;
+				top: 30px;
+				left: 5px;
+			}
+
+			&.pager-current {
+				background-color: lighten($dark-blue, 20%);
+			}
+
+			&.pager-first,
+			&.pager-previous,
+			&.pager-next,
+			&.pager-last {
+				width: auto;
+				
+				a {
+					padding: 0 5px;
+				}
+			}
+
+			&:active {
+				outline: 0;
+				box-shadow: inset 1px 1px 3px darken($dark-blue, 10%);
+			}
+
+			&:hover {
+				box-shadow: 1px 1px 3px lighten(black, 60%);
+			}
+
+			a,
+			span {
+				display: block;
+				color: #ffffff;
+				text-shadow: #222 0px 1px 0px;
+				text-decoration: none;
+
+				&:hover {
+					text-decoration: none;
+				}
+			}
+		}
+	}
+}
