@@ -426,7 +426,7 @@ a, a:active, a:visited {
   color: #496473;
   text-decoration: none; }
 
-#content a,
+.item-page a,
 a:hover {
   text-decoration: underline; }
 
@@ -756,6 +756,50 @@ body {
   #copyright a {
     color: #e5eef2; }
 
+.item-list ul.pager {
+  text-align: center;
+  color: #ffffff; }
+  .item-list ul.pager li {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    width: 28px;
+    height: 32px;
+    line-height: 32px;
+    border-radius: 2px;
+    padding: 0;
+    margin-bottom: 5px;
+    border-style: solid;
+    border-width: 1px;
+    cursor: pointer;
+    background-color: #2c3d46;
+    border-color: #182227;
+    position: relative; }
+    .item-list ul.pager li .ajax-progress {
+      position: absolute;
+      top: 30px;
+      left: 5px; }
+    .item-list ul.pager li.pager-current {
+      background-color: #537485; }
+    .item-list ul.pager li.pager-first, .item-list ul.pager li.pager-previous, .item-list ul.pager li.pager-next, .item-list ul.pager li.pager-last {
+      width: auto; }
+      .item-list ul.pager li.pager-first a, .item-list ul.pager li.pager-previous a, .item-list ul.pager li.pager-next a, .item-list ul.pager li.pager-last a {
+        padding: 0 5px; }
+    .item-list ul.pager li:active {
+      outline: 0;
+      box-shadow: inset 1px 1px 3px #182227; }
+    .item-list ul.pager li:hover {
+      box-shadow: 1px 1px 3px #999999; }
+    .item-list ul.pager li a,
+    .item-list ul.pager li span {
+      display: block;
+      color: #ffffff;
+      text-shadow: #222 0px 1px 0px;
+      text-decoration: none; }
+      .item-list ul.pager li a:hover,
+      .item-list ul.pager li span:hover {
+        text-decoration: none; }
+
 .logo {
   text-align: center;
   padding: 30px 0 20px; }
@@ -1005,7 +1049,8 @@ body {
     background: #2c3d46;
     border: none; }
     .view-content .views-accordion-header .field-content a {
-      color: #fff; }
+      color: #fff;
+      text-decoration: none; }
   .view-content .ui-state-default .ui-icon,
   .view-content .ui-state-active .ui-icon {
     background-image: url("../images/accordion-icons.png"); }
@@ -1031,6 +1076,9 @@ body {
   float: none; }
   .views-exposed-form .views-exposed-widget input.form-submit {
     margin-top: 0; }
+
+.views-exposed-widget .views-submit-button input {
+  margin-top: 0; }
 
 .views-accordion-find_a_copy-page-header,
 .view-bridal-shows h2 {
