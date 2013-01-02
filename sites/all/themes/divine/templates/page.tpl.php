@@ -93,9 +93,9 @@
   </div>
 
 	<div id="masthead"><?php print render($page['masthead']); ?></div>
-	
+
 	<div class="clear"></div>
-	
+
   <div id="main">
 
     <div id="content" class="column item-page" role="main">
@@ -121,11 +121,11 @@
 			</div>
 			<?php endif; ?>
     </div><!-- /#content -->
-		
+
 		<div id="sidebar">
 			<?php print render($page['sidebar']); ?>
 		</div>
-		
+
     <div id="navigation">
 
       <?php if ($main_menu): ?>
@@ -165,7 +165,7 @@
     <?php endif; ?>
 
 		<div class="clear"></div>
-		
+
   </div><!-- /#main -->
 </div><!-- /#container -->
 
@@ -173,7 +173,7 @@
 	<?php print render($page['footer']); ?>
 	<div id="copyright">
 		&copy; <?php echo date('Y') ?> Divine Details. All Rights Reserved.<br />
-		Site by <a href="http://ccistudios.com">CCI Studios</a>
+		Site by <a target="_blank" href="http://ccistudios.com">CCI Studios</a>
 	</div>
 </div></div>
 </div><!-- /#wrapper -->
