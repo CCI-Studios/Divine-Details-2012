@@ -13,8 +13,10 @@
 (function ($, Drupal, window, document, undefined) {
 
 
-	$('#block-system-main-menu :not([href*="#"])').each(function(){
-		this.hash = "#page-title";
+	$(function() {
+		$('#block-system-main-menu :not([href*="#"])').each(function(){
+			this.hash = "#main";
+		});
 	});
 
 
