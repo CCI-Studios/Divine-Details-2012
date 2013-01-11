@@ -44,20 +44,20 @@
 	border-bottom: 1px solid #cbd3d8;
 	text-align: center;
 	width: 100%;
-	
+
 	.menu > li {
 		line-height: 30px;
 		width: 49%;
-		
+
 		&.first {
 			padding-left: 0;
 		}
-		
+
 		&.last {
 			padding-right: 0;
 		}
 	}
-	
+
 	a {
 		color: $medium-blue;
 	}
@@ -66,7 +66,7 @@
 .secondary {
 	width: 100%;
 	background: url('../images/divider_footer.png') bottom center repeat-x;
-	
+
 	.menu > li {
 		min-height: 27px;
 		padding: 0;
@@ -74,7 +74,7 @@
 			border-left: 0;
 		}
 	}
-	
+
 	a {
 		font-size: 12px;
 		line-height: 1em;
@@ -106,7 +106,7 @@
 	padding: 0;
 	border: 0;
 	margin-top: 0;
-	
+
 	li {
 		padding: 4px;
 		display: inline-block;

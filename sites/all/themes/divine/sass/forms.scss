@@ -28,13 +28,13 @@ input:invalid, textarea:invalid {
 button {  width: auto; overflow: visible; }
 
 .webform-client-form {
-	
+
 	.form-text {
 		min-width: 250px;
 		width: 100%;
 		max-width: 350px;
 	}
-	
+
 	.webform-component-markup {
 		font-size: 16px;
 		font-weight: bold;
@@ -42,7 +42,7 @@ button {  width: auto; overflow: visible; }
 }
 
 div.form-item {
-	
+
 	input.form-checkbox {
 		vertical-align: middle;
 	}
@@ -75,6 +75,8 @@ input[type="submit"] {
 	-moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
 	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
 }
+
+select { max-width: 100%; }
 
 input[type="submit"] {
     padding: 4px 12px;

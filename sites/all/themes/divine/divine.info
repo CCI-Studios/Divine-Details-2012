@@ -68,11 +68,11 @@ stylesheets-conditional[lte IE 8][all][] = css/template-ie.css
 ; scripts[] = js/mootools-core-1.4.5-full-compat.js
 ; scripts[] = js/columns.js
 ; scripts[] = js/html5.js
-scripts[] = js/lettering.js
+;scripts[] = js/lettering.js
 ;scripts[] = js/menu.js
-scripts[] = js/detectmobilebrowser.js
+;scripts[] = js/detectmobilebrowser.js
 ; scripts[] = js/rollover.js
-scripts[] = js/script-init.js
+scripts[] = js/script.js
 
 
 ; This section lists the regions defined in Zen's default page.tpl.php and

@@ -4,18 +4,8 @@
  *
  * In order for this JavaScript to be loaded on pages, see the instructions in
  * the README.txt next to this file.
- */
-
-// JavaScript should be made compatible with libraries other than jQuery by
+ */// JavaScript should be made compatible with libraries other than jQuery by
 // wrapping it with an "anonymous closure". See:
 // - http://drupal.org/node/1446420
 // - http://www.adequatelygood.com/2010/3/JavaScript-Module-Pattern-In-Depth
-(function ($, Drupal, window, document, undefined) {
-
-
-	$('#block-system-main-menu :not([href*="#"])').each(function(){
-		this.hash = "#page-title";
-	});
-
-
-})(jQuery, Drupal, this, this.document);
+(function(e,t,n,r,i){e('#block-system-main-menu :not([href*="#"])').each(function(){this.hash="#page-title"})})(jQuery,Drupal,this,this.document);
