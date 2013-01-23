@@ -8,4 +8,4 @@
 // wrapping it with an "anonymous closure". See:
 // - http://drupal.org/node/1446420
 // - http://www.adequatelygood.com/2010/3/JavaScript-Module-Pattern-In-Depth
-(function(e,t,n,r,i){e(function(){e('#block-system-main-menu :not([href*="#"])').each(function(){this.hash="#main"})})})(jQuery,Drupal,this,this.document);
+(function(e,t,n,r,i){e(function(){var t=e("#block-system-main-menu");e(".toggle-menu").click(function(){t.slideToggle()})})})(jQuery,Drupal,this,this.document);

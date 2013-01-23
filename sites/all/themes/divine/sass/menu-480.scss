@@ -1,7 +1,16 @@
 .primary {
-	
+	display: block !important;
+	height: auto;
+	opacity: 1 !important;
+
+	border-bottom: 1px solid #cbd3d8;
+
 	.menu > li {
 		width: auto;
 		padding: 0 11px;
+
+		border-bottom: none;
 	}
 }
+
+.social-media .toggle-menu { display: none; }

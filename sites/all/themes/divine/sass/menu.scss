@@ -36,31 +36,27 @@
 	}
 }
 
+
 .primary {
+	display: none;
 	font-family: 'Goudy Old Style';
 	font-size: 14px;
 	text-transform: uppercase;
 	border-top: 1px solid #cbd3d8;
-	border-bottom: 1px solid #cbd3d8;
 	text-align: center;
 	width: 100%;
 
 	.menu > li {
-		line-height: 30px;
-		width: 49%;
+		width: 100%;
 
-		&.first {
-			padding-left: 0;
-		}
+		border-bottom: 1px solid #cbd3d8;
+		line-height: 40px;
 
-		&.last {
-			padding-right: 0;
-		}
+		&.first { padding-left: 0; }
+		&.last { padding-right: 0; }
 	}
 
-	a {
-		color: $medium-blue;
-	}
+	a { color: $medium-blue; }
 }
 
 .secondary {

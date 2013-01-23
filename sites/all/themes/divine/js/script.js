@@ -12,10 +12,10 @@
 // - http://www.adequatelygood.com/2010/3/JavaScript-Module-Pattern-In-Depth
 (function ($, Drupal, window, document, undefined) {
 
-
 	$(function() {
-		$('#block-system-main-menu :not([href*="#"])').each(function(){
-			this.hash = "#main";
+		var $primary = $('#block-system-main-menu');
+		$('.toggle-menu').click(function() {
+			$primary.slideToggle();
 		});
 	});
 
